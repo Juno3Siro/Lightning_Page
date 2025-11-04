@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom */
+:root {
+  --brand-brown: #6b4f31;
+  --brand-beige: #f6efe6;
+  --brand-green: #6a8a6d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply bg-[var(--brand-beige)] text-gray-800 font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Playfair Display', serif;
+  color: var(--brand-brown);
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.header-link {
+  color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-green);
+}
+
+.hero-bg {
+  background-image:
+    linear-gradient(180deg, rgba(246, 239, 230, 0.6), rgba(246, 239, 230, 0.2)),
+    url('https://caovanduy.com/_next/image?url=%2Fimages%2Fhero-bg.jpg&w=1920&q=75');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 15, 15, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 15px 40px rgba(15, 15, 15, 0.1);
+}
+
+button,
+a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af; /* Tailwind gray-400 */
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand-green);
+  border-color: var(--brand-green);
+}
+
+footer {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-bg {
+    background-position: center top !important;
+  }
+}
+
+/* Ensure hero image is responsive */
+.hero-bg img {
+  width: 100%;
+  height: auto;
+  max-height: 384px; /* h-96 */
+  object-fit: cover;
+}
